@@ -1,1 +1,333 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --color-1: #1F1E30;
+  --color-1-2: #41CDE6;
+  --color-2: #FF7350;
+  --color-3: #1a1e29;
+  --color-4: #6a6e79;
+  --color-5: #ffffff;
+  --white: #fff;
+  --background: #d5dbe2;
+
+  --text-color: #333;
+  --blue-500: #007bff;
+  --yellow-500: #ffc107;
+  --green-500: #28a745;
+  --blue-400: #339af0;
+  --yellow-400: #ffd966;
+  --green-400: #5ec878;
+}
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--background);
+  color: rgb(1, 31, 77);
+}
+
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+.gap {
+  gap: 10px;
+}
+
+.flexs {
+  display: flex !important;
+  align-items: center;
+}
+
+.flexs_space {
+  justify-content: space-between;
+}
+
+.flexs_center {
+  justify-content: center;
+}
+
+.flexs_wap {
+  flex-wrap: wrap;
+}
+
+.flexs_column {
+  flex-direction: column;
+}
+
+.bloc_page {
+  max-width: 400px;
+  margin: auto;
+}
+
+.b_c_2{
+  .p-ripple {
+    background: var(--color-2) !important;
+    color: var(--color-1) !important;
+  }
+}
+
+.b_red{
+  .p-ripple {
+    background: red !important;
+    color: var(--color-1) !important;
+  }
+}
+.sidenav {
+  height: 98%;
+  width: 250px;
+  border-radius: 5px;
+  position: fixed;
+  z-index: 1;
+  // background-color: var(--color-1);
+  background: linear-gradient(318deg, rgba(5,69,146,1) 0%, rgba(4,19,42,1) 100%);
+  overflow-x: hidden;
+
+  top: 50%;
+  left: 132px;
+  transform: translate(-50%, -50%);
+}
+
+.sidenav {
+  p-button {
+    padding: 6px;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--color-5);
+    display: block;
+    .p-ripple {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      background: none;
+      border: none;
+      border-radius: 5px;
+      transition: 1000ms;
+
+  }
+  .p-ripple:hover {
+    background: var(--color-1-2);
+    /* margin: 0px 0px 0px 25px; */
+    color: var(--color-1);
+    font-size: 22px;
+    border-radius: 5px;
+    transition: 100ms;
+    border: none;
+  }
+  .p-button-label {
+    flex: 0;
+  }
+
+  }
+  p-button {
+    padding: 6px;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--color-1);
+    display: block;
+  }
+  
+  .active {
+
+    .p-ripple {
+      background: var(--color-1-2);
+    /* margin: 0px 0px 0px 25px; */
+    color: var(--color-1);
+    font-size: 22px;
+    border-radius: 5px;
+    transition: 100ms;
+    border: none;
+    }
+  }
+
+  
+}
+.btn{
+  p-button {
+    font-size: 20px;
+    color: var(--color-5);
+    display: block;
+    .p-ripple {
+      overflow: hidden;
+      position: relative;
+      border: none;
+      border-radius: 5px;
+      background: linear-gradient(213deg, #111F2C 0%, #003738 63%);
+
+  }
+}
+
+}
+.logo {
+  color: #fff;
+  margin-top: 10px !important;
+  margin: auto;
+  width: 88%;
+  p{
+    font-size: 12px;
+    margin: 0;
+    color: var(--color-2);
+  }
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+
+.main {
+    margin-left: 250px;
+    font-size: 28px;
+    padding: 0px 10px;
+  }
+
+  .centent{
+    width: 94%;
+    margin: auto;
+  }
+  
+  
+  .topnav {
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+    background-color: var(--color-3);
+    border-bottom: 1px solid #fff;
+    color: #fff;
+  
+    .img_admin{
+      img{
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .header_home {
+    .stat_card {
+      display: block;
+      align-items: center;
+      width: 30%;
+      min-width: 270px;
+      min-height: 128px;
+      background: var(--color-1);
+      border-radius: 10px;
+      padding: 30px 25px;
+      color: var(--color-5);
+      p {
+        font-size: 23px;
+        margin: 0;
+      }
+    }
+  
+    .icon_header_home{
+      width: 60px;
+      height: 60px;
+      border-radius: 5px;
+      background: var(--color-2);
+      position: relative;
+      i{
+        font-size: 30px;
+        position: absolute;
+        color: var(--color-1);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .color_b {
+      background: var(--color-2) !important;
+      color: var(--color-1);
+      .icon_header_home{
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+        background: var(--color-1);
+        position: relative;
+        i{
+          font-size: 30px;
+          position: absolute;
+          color: var(--color-2);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  
+    
+  }
+.chart{
+  width: 26%;
+  background: var(--color-2);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card_table {
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--color-1);
+
+  ::ng-deep p-table {
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--color-2);
+  }
+  img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+  }
+
+}
+
+.table_home{
+  width: 70%;
+}
+
+.all_class{
+  a{
+    text-decoration: none;
+    color: rgb(1, 31, 77);
+  }
+  .cart_class{
+    border-radius: 10px;
+    width: 300px;
+    height: 120px;
+    background: #fff;
+    border-bottom: 4px solid var(--color-1-2);
+    padding: 30px;
+  }
+  h2{
+    margin: 0;
+  }
+  p{
+    margin: 0;
+    font-size: 20px;
+  }
+  .cart_color{
+    width: 50px;
+    height: 50px;
+    background: var(--color-1-2);
+    border-radius: 10px;
+  }
+}
+
+.titre_page{
+  margin: 15px 0px;
+  padding: 2px 8px;
+  border-left: 5px solid var(--color-1-2);
+  background: var(--color-1);
+  border-radius: 10px;
+  h3{
+    color: var(--color-2);
+  }
+}

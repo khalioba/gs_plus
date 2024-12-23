@@ -1,0 +1,80 @@
+<div class="header_home flexs flexs_space flexs_wap gap">
+
+    <div class="stat_card flexs flexs_space">
+
+        <div class="">
+            <h3 class="stat_count">362</h3>
+            <p>éleve</p>
+        </div>
+
+        <div class="icon_header_home">
+            <i class="pi pi-users"></i>
+        </div>
+
+    </div>
+
+    <div class="stat_card flexs flexs_space">
+
+        <div class="">
+            <h3 class="stat_count">41</h3>
+            <p>Enseignants</p>
+        </div>
+
+        <div class="icon_header_home">
+            <i class="pi pi-briefcase"></i>
+        </div>
+
+    </div>
+
+    <div class="stat_card color_b flexs flexs_space">
+
+        <div class="">
+            <h3 class="stat_count">154</h3>
+            <p>Entrées</p>
+        </div>
+
+        <div class="icon_header_home">
+            <i class="pi pi-sparkles"></i>
+        </div>
+
+    </div>
+    
+</div>
+<br>
+<div class="card_table">
+    <div class="table flexs gap flexs_space">
+        <div class="card table_home">
+            <p-table
+                [value]="eleves"
+                [paginator]="true"
+                [rows]="5"
+                [tableStyle]="{ 'min-width': '50rem' }"
+                [rowsPerPageOptions]="[5, 10, 20]">
+
+                <ng-template pTemplate="header">
+
+                    <tr>
+                        <th style="width:25%">rang</th>
+                        <th style="width:25%">Nom</th>
+                        <th style="width:25%">Prenom</th>
+                        <th style="width:25%">classe</th>
+                    </tr>
+                    
+                </ng-template>
+                <ng-template pTemplate="body" let-eleve>
+                    <tr>
+
+                        <td>{{ eleve.rang }}</td>
+                        <td>{{ eleve.name }}</td>
+                        <td>{{ eleve.Prenom }}</td>
+                        <td>{{ eleve.class }}</td>
+
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+        <div class="chart card flex justify-content-center">
+            <p-chart type="doughnut" [data]="data" [options]="options" />
+        </div>
+    </div>
+</div>
