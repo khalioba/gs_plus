@@ -1,75 +1,40 @@
-
-<p-button (click)="showDialog()" label="Show" />
-<p-dialog header="Edit Profile" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
-    <span class="p-text-secondary block mb-8">Update your information.</span>
-    <div class="flex items-center gap-4 mb-4">
-        <label for="username" class="font-semibold w-24">Username</label>
-        <input pInputText id="username" class="flex-auto" autocomplete="off" />
-    </div>
-    <div class="flex items-center gap-4 mb-8">
-        <label for="email" class="font-semibold w-24">Email</label>
-        <input pInputText id="email" class="flex-auto" autocomplete="off" />
-    </div>
-    <div class="flex justify-end gap-2">
-        <p-button label="Cancel" severity="secondary" (click)="visible = false" />
-        <p-button label="Save" (click)="visible = false" />
-    </div>
-</p-dialog>
-
 <div class="titre_page">
-    <h3>Gestion des élèves</h3>
+  <h3>Gestion des élèves</h3>
 </div>
 <div class="header_home flexs flexs_space flexs_wap gap">
+  <app-post-user />
 
-    <div class="stat_card flexs flexs_space">
+  <a routerLink="/" class="p-button font-bold" link="true">
+    <div class="stat_card flexs flexs_space gap">
+      <div class="">
+        <h3 class="stat_count"></h3>
+        <p>Payer une inscripion</p>
+      </div>
 
-        <div class="">
-            <h3 class="stat_count"></h3>
-            <p>Ajouter un élève</p>
-        </div>
-
-        <div class="icon_header_home">
-            <i class="pi pi-users"></i>
-        </div>
-
+      <div class="icon_header_home">
+        <i class="pi pi-briefcase"></i>
+      </div>
     </div>
+  </a>
+  <a routerLink="/" class="p-button font-bold" link="true">
+    <div class="stat_card color_b flexs flexs_space gap">
+      <div class="">
+        <h3 class="stat_count"></h3>
+        <p>Payer Frais mensuels</p>
+      </div>
 
-    <div class="stat_card flexs flexs_space">
-
-        <div class="">
-            <h3 class="stat_count"></h3>
-            <p>Payer une inscripion</p>
-        </div>
-
-        <div class="icon_header_home">
-            <i class="pi pi-briefcase"></i>
-        </div>
-
+      <div class="icon_header_home">
+        <i class="pi pi-sparkles"></i>
+      </div>
     </div>
-
-    <div class="stat_card color_b flexs flexs_space">
-
-        <div class="">
-            <h3 class="stat_count"></h3>
-            <p>Payer Frais mensuels</p>
-        </div>
-
-        <div class="icon_header_home">
-            <i class="pi pi-sparkles"></i>
-        </div>
-
-    </div>
-    
+  </a>
 </div>
 <div class="titre_page">
-    <h3>primaire</h3>
+  <h3>primaire</h3>
 </div>
-<app-classe />
-<div class="titre_page">
-    <h3>Colege</h3>
+<div class="all_class grid">
+  <app-classe
+    *ngFor="let classe of classes?.data"
+    [classe]="classe"
+  ></app-classe>
 </div>
-<app-classe />
-<div class="titre_page">
-    <h3>Lycée</h3>
-</div>
-<app-classe />

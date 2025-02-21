@@ -1,0 +1,57 @@
+<div class="">
+  <h3 class="col_1">Enseignants</h3>
+  <br />
+  <div class="header_home flexs flexs_space flexs_wap gap">
+    <app-post-admin />
+    <a routerLink="/" class="p-button font-bold" link="true">
+      <div class="stat_card color_b flexs flexs_space gap">
+        <div class="">
+          <h3 class="stat_count"></h3>
+          <p>Payer un Enseignants</p>
+        </div>
+
+        <div class="icon_header_home">
+          <i class="pi pi-sparkles"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+  <br />
+  <div class="card_dm">
+    <p-table
+      [value]="eleves"
+      [paginator]="true"
+      [rows]="5"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      [rowsPerPageOptions]="[5, 10, 20]"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Nom Prenom</th>
+          <!-- <th>Matricul</th> -->
+          <th>Genre</th>
+          <!-- <th>T1</th> -->
+          <!-- <th>T2</th> -->
+          <th>Numéro</th>
+          <th>Plus</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-eleve>
+        <tr>
+          <td>{{ eleve.name }} {{ eleve.Prenom }}</td>
+          <td>M</td>
+          <!-- <td>12</td> -->
+          <!-- <td>15</td> -->
+          <td>069400152</td>
+          <td>
+            <p-button
+              routerLink="../detail_users"
+              label="Detail"
+              severity="info"
+            />
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

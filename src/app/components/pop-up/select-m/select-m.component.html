@@ -1,0 +1,123 @@
+<a (click)="showDialog()">
+  <div class="cart_class flexs flexs_space">
+    <div class="">
+      <h3>Trimestre 1</h3>
+      <p></p>
+    </div>
+    <div class="cart_color"></div>
+  </div>
+</a>
+<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '50%' }">
+  <ng-template #header>
+    <div class="inline-flex items-center justify-center gap-2">
+      <span class="font-bold whitespace-nowrap"> Selection de la matier </span>
+    </div>
+  </ng-template>
+  <div class="all_class grid2">
+    <a routerLink="../notes">
+      <div class="cart_class flexs flexs_space">
+        <div class="">
+          <h3>SVT</h3>
+          <p></p>
+        </div>
+        <div class="cart_color"></div>
+      </div>
+    </a>
+    <a routerLink="../notes">
+      <div class="cart_class flexs flexs_space">
+        <div class="">
+          <h3>MATH</h3>
+          <p></p>
+        </div>
+        <div class="cart_color"></div>
+      </div> </a
+    ><a routerLink="../notes">
+      <div class="cart_class flexs flexs_space">
+        <div class="">
+          <h3>P-C</h3>
+          <p></p>
+        </div>
+        <div class="cart_color"></div>
+      </div> </a
+    ><a routerLink="../notes">
+      <div class="cart_class flexs flexs_space">
+        <div class="">
+          <h3>Trimestre 2</h3>
+          <p></p>
+        </div>
+        <div class="cart_color"></div>
+      </div> </a
+    ><a routerLink="../notes">
+      <div class="cart_class flexs flexs_space">
+        <div class="">
+          <h3>Trimestre 2</h3>
+          <p></p>
+        </div>
+        <div class="cart_color"></div>
+      </div> </a
+    ><a routerLink="../notes">
+      <div class="cart_class flexs flexs_space">
+        <div class="">
+          <h3>Trimestre 2</h3>
+          <p></p>
+        </div>
+        <div class="cart_color"></div>
+      </div> </a
+    ><a routerLink="../notes">
+      <div class="cart_class flexs flexs_space">
+        <div class="">
+          <h3>Trimestre 2</h3>
+          <p></p>
+        </div>
+        <div class="cart_color"></div>
+      </div> </a
+    ><a routerLink="../notes">
+      <div class="cart_class flexs flexs_space">
+        <div class="">
+          <h3>Trimestre 2</h3>
+          <p></p>
+        </div>
+        <div class="cart_color"></div>
+      </div> </a
+    ><a routerLink="../notes">
+      <div class="cart_class flexs flexs_space">
+        <div class="">
+          <h3>Trimestre 2</h3>
+          <p></p>
+        </div>
+        <div class="cart_color"></div>
+      </div> </a
+    ><a routerLink="../notes">
+      <div class="cart_class flexs flexs_space">
+        <div class="">
+          <h3>Trimestre 2</h3>
+          <p></p>
+        </div>
+        <div class="cart_color"></div>
+      </div> </a
+    ><a routerLink="../notes">
+      <div class="cart_class flexs flexs_space">
+        <div class="">
+          <h3>Trimestre 2</h3>
+          <p></p>
+        </div>
+        <div class="cart_color"></div>
+      </div>
+    </a>
+  </div>
+
+  <ng-template #footer>
+    <p-button
+      label="Cancel"
+      [text]="true"
+      severity="secondary"
+      (click)="visible = false"
+    />
+    <p-button
+      label="Save"
+      [outlined]="true"
+      severity="secondary"
+      (click)="visible = false"
+    />
+  </ng-template>
+</p-dialog>

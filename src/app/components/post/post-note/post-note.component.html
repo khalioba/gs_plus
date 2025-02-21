@@ -1,0 +1,69 @@
+<p-button (click)="showDialog()" severity="info" label="note" />
+<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '50%' }">
+  <ng-template #header>
+    <div class="inline-flex items-center justify-center gap-2">
+      <span class="font-bold whitespace-nowrap"> {{ discipline }} </span>
+    </div>
+  </ng-template>
+
+  <div class="input_note grid2">
+    <div class="">
+      <label for="username" class="font-semibold w-24">moyenne de classe</label
+      ><br /><br />
+      <input pInputText id="username" class="flex-auto" autocomplete="off" />
+    </div>
+    <div class="">
+      <label for="username" class="font-semibold w-24"
+        >moyenne de composition</label
+      ><br /><br />
+      <input pInputText id="username" class="flex-auto" autocomplete="off" />
+    </div>
+  </div>
+  <br />
+  <!-- <div class="input_note grid2">
+    <div class="">
+      <label for="username" class="font-semibold w-24">Username</label><br />
+      <input pInputText id="username" class="flex-auto" autocomplete="off" />
+    </div>
+    <div class="">
+      <label for="username" class="font-semibold w-24">Username</label><br />
+      <input pInputText id="username" class="flex-auto" autocomplete="off" />
+    </div>
+  </div>
+  <br />
+  <div class="input_note grid2">
+    <div class="">
+      <label for="username" class="font-semibold w-24">Username</label><br />
+      <input pInputText id="username" class="flex-auto" autocomplete="off" />
+    </div>
+    <div class="">
+      <label for="username" class="font-semibold w-24">Username</label><br />
+      <input pInputText id="username" class="flex-auto" autocomplete="off" />
+    </div>
+  </div>
+  <br />
+  <div class="input_note grid2">
+    <div class="">
+      <label for="username" class="font-semibold w-24">Username</label><br />
+      <input pInputText id="username" class="flex-auto" autocomplete="off" />
+    </div>
+    <div class="">
+      <label for="username" class="font-semibold w-24">Username</label><br />
+      <input pInputText id="username" class="flex-auto" autocomplete="off" />
+    </div>
+  </div> -->
+  <ng-template #footer>
+    <p-button
+      label="Cancel"
+      [text]="true"
+      severity="secondary"
+      (click)="visible = false"
+    />
+    <p-button
+      label="Save"
+      [outlined]="true"
+      severity="secondary"
+      (click)="visible = false"
+    />
+  </ng-template>
+</p-dialog>

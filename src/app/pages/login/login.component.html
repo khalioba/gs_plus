@@ -1,1 +1,43 @@
-<p>login works!</p>
+<div class="login">
+  <div class="carte_login">
+    <div class="flexs carte_login_img gap">
+      <img src="android-chrome-192x192.png" alt="" />
+      <h2>GS-Plus</h2>
+    </div>
+    <br /><br />
+    <div class="carte_login_text">
+      <p>Connectez-vous</p>
+      <p>pour voir Espace de Gestion</p>
+    </div>
+    <br /><br />
+    <div class="carte_login_input">
+      <p-iftalabel>
+        <input pInputText id="phone" [(ngModel)]="phone" autocomplete="off" />
+        <label for="phone">Phone</label>
+      </p-iftalabel>
+      <br />
+      <p-iftalabel>
+        <input
+          pInputText
+          id="password"
+          [(ngModel)]="password"
+          autocomplete="off"
+        />
+        <label for="password">Mot de passe</label>
+      </p-iftalabel>
+      <br />
+      <div class="btnn">
+        <p-button (click)="onLogin()" label="Se connecter" severity="info" />
+      </div>
+
+      <p *ngIf="errorMessage">{{ errorMessage }}</p>
+    </div>
+    <br /><br />
+    <div class="carte_login_text">
+      <p>
+        Vous ne parvenez pas à vous connecter, <br />
+        <a href=""><strong>Contactez l’administrateur</strong></a>
+      </p>
+    </div>
+  </div>
+</div>

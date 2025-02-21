@@ -1,0 +1,40 @@
+<div class="detail_user">
+  <div class="card_user">
+    <h2 class="col_w">Trimestre {{ t }}</h2>
+    <br />
+    <p-table
+      [value]="eleves"
+      [paginator]="true"
+      [rows]="10"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      [rowsPerPageOptions]="[5, 10, 20]"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Discipline</th>
+          <th>Moy de classe</th>
+          <th>Moy de composition</th>
+          <th>Moy /20</th>
+          <th>Coef</th>
+          <th>Moy General</th>
+          <th>Appreciation</th>
+          <th>Modifie</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-eleve>
+        <tr>
+          <td>{{ eleve.subject_name }}</td>
+          <td>{{ eleve.moy_de_c }}</td>
+          <td>{{ eleve.moy_de_com }}</td>
+          <td>{{ eleve.moy }}</td>
+          <td>{{ eleve.coefficient }}</td>
+          <td>{{ eleve.moy_g }}</td>
+          <td>{{ eleve.appreciations }}</td>
+          <td>
+            <app-post-note [discipline]="eleve.subject_name" />
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

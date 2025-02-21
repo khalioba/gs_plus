@@ -1,73 +1,9 @@
-
-<div class="all_class flexs flexs_space flexs_wap gap">
-    <a routerLink="../detailclasses">
-        <div class="cart_class flexs flexs_space">
-            <div class="">
-                <h3>6 éme</h3>
-                <p>250 élève</p>
-            </div>
-            <div class="cart_color"></div>
-        </div>
-    </a>
-
-    <a routerLink="../detailclasses">
-        <div class="cart_class flexs flexs_space">
-            <div class="">
-                <h3>6 éme</h3>
-                <p>250 élève</p>
-            </div>
-            <div class="cart_color"></div>
-        </div>
-    </a>
-
-    <a routerLink="../detailclasses">
-        <div class="cart_class flexs flexs_space">
-            <div class="">
-                <h3>6 éme</h3>
-                <p>250 élève</p>
-            </div>
-            <div class="cart_color"></div>
-        </div>
-    </a>
-
-    <a routerLink="../detailclasses">
-        <div class="cart_class flexs flexs_space">
-            <div class="">
-                <h3>6 éme</h3>
-                <p>250 élève</p>
-            </div>
-            <div class="cart_color"></div>
-        </div>
-    </a>
-
-    <a routerLink="../detailclasses">
-        <div class="cart_class flexs flexs_space">
-            <div class="">
-                <h3>6 éme</h3>
-                <p>250 élève</p>
-            </div>
-            <div class="cart_color"></div>
-        </div>
-    </a>
-
-    <a routerLink="../detailclasses">
-        <div class="cart_class flexs flexs_space">
-            <div class="">
-                <h3>6 éme</h3>
-                <p>250 élève</p>
-            </div>
-            <div class="cart_color"></div>
-        </div>
-    </a>
-
-    <a routerLink="../detailclasses">
-        <div class="cart_class flexs flexs_space">
-            <div class="">
-                <h3>6 éme</h3>
-                <p>250 élève</p>
-            </div>
-            <div class="cart_color"></div>
-        </div>
-    </a>
-</div>
-<br>
+<a routerLink="../detailclasses/{{ classe.id_class }}">
+  <div class="cart_class flexs flexs_space">
+    <div class="">
+      <h3>{{ classe.class_name }}</h3>
+      <p>{{ classe.student_count }} élève</p>
+    </div>
+    <div class="cart_color"></div>
+  </div>
+</a>

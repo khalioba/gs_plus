@@ -1,35 +1,82 @@
-<div class="titre_page">
-    <h3>primaire</h3>
-</div>
-<div class="card_table">
-        <div class="card">
-            <p-table
-                [value]="eleves"
-                [paginator]="true"
-                [rows]="5"
-                [tableStyle]="{ 'min-width': '50rem' }"
-                [rowsPerPageOptions]="[5, 10, 20]">
-
-                <ng-template pTemplate="header">
-
-                    <tr>
-                        <th style="width:25%">rang</th>
-                        <th style="width:25%">Nom</th>
-                        <th style="width:25%">Prenom</th>
-                        <th style="width:25%">classe</th>
-                    </tr>
-                    
-                </ng-template>
-                <ng-template pTemplate="body" let-eleve>
-                    <tr>
-
-                        <td>{{ eleve.rang }}</td>
-                        <td>{{ eleve.name }}</td>
-                        <td>{{ eleve.Prenom }}</td>
-                        <td>{{ eleve.class }}</td>
-
-                    </tr>
-                </ng-template>
-            </p-table>
+<div class="">
+  <h3 class="col_1">{{ students }}</h3>
+  <br />
+  <div class="header_home flexs flexs_space flexs_wap gap">
+    <a routerLink="/" class="p-button font-bold" link="true">
+      <div class="stat_card flexs flexs_space gap">
+        <div class="">
+          <h3 class="stat_count"></h3>
+          <p>Ajouter un élève</p>
         </div>
+
+        <div class="icon_header_home">
+          <i class="pi pi-users"></i>
+        </div>
+      </div>
+    </a>
+
+    <a routerLink="/" class="p-button font-bold" link="true">
+      <div class="stat_card flexs flexs_space gap">
+        <div class="">
+          <h3 class="stat_count"></h3>
+          <p>Payer une inscripion</p>
+        </div>
+
+        <div class="icon_header_home">
+          <i class="pi pi-briefcase"></i>
+        </div>
+      </div>
+    </a>
+    <a routerLink="/" class="p-button font-bold" link="true">
+      <div class="stat_card color_b flexs flexs_space gap">
+        <div class="">
+          <h3 class="stat_count"></h3>
+          <p>Payer Frais mensuels</p>
+        </div>
+
+        <div class="icon_header_home">
+          <i class="pi pi-sparkles"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+  <br />
+  <div class="card_dm">
+    <p-table
+      [value]="students"
+      [paginator]="true"
+      [rows]="5"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      [rowsPerPageOptions]="[5, 10, 20]"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Nom Prenom</th>
+          <th>Matricul</th>
+          <th>Genre</th>
+          <th>T1</th>
+          <th>T2</th>
+          <th>T3</th>
+          <th>Plus</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-students>
+        <tr>
+          <td>{{ students.first_name }} {{ students.last_name }}</td>
+          <td>{{ students.rang }}</td>
+          <td>{{ students.rang }}</td>
+          <td>{{ students.rang }}</td>
+          <td>{{ students.rang }}</td>
+          <td>{{ students.rang }}</td>
+          <td>
+            <p-button
+              routerLink="../detail_users"
+              label="Detail"
+              severity="info"
+            />
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
 </div>

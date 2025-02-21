@@ -1,12 +1,16 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
+import { Table } from 'primeng/table';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss'
+    selector: 'app-dashboard',
+    templateUrl: './dashboard.component.html',
+    styleUrl: './dashboard.component.scss',
+    standalone: false
 })
 export class DashboardComponent {
+  @ViewChild('dt2') dt2!: Table;
+  
   eleves = [
     {
       rang: 1,
@@ -33,22 +37,19 @@ export class DashboardComponent {
       class: '5 eme'
     },
     {
-      rang: 6,
+      rang: 5,
       name: 'James',
       Prenom: 'davive',
       class: '5 eme'
-    },
-    {
-      rang: 7,
-      name: 'James',
-      Prenom: 'davive',
-      class: '5 eme'
-    },
+    }
     
   ];
 
+  first = 0;
+
   data: any = {};
   options: any = {};
+loading: unknown;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
@@ -93,5 +94,13 @@ export class DashboardComponent {
         },
       },
     };
+  }
+
+
+  filterGlobal(event: Event, field: string) {
+    const input = event.target as HTMLInputElement;
+    if (input) {
+      this.dt2.filterGlobal(input.value, field); 
+    }
   }
 }

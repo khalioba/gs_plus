@@ -1,0 +1,37 @@
+<!-- <p>post-message works!</p> -->
+<p-button (click)="showDialog()" severity="info" label="Message" />
+<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '50%' }">
+  <ng-template #header>
+    <div class="inline-flex items-center justify-center gap-2">
+      <span class="font-bold whitespace-nowrap"> Message </span>
+    </div>
+  </ng-template>
+
+  <div class="input_note grid1">
+    <div class="">
+      <label for="username" class="font-semibold w-24"> Titre </label
+      ><br /><br />
+      <input pInputText id="username" class="flex-auto" autocomplete="off" />
+    </div>
+    <div class="">
+      <label for="username" class="font-semibold w-24">Message</label
+      ><br /><br />
+      <textarea rows="10" cols="30" pTextarea style="width: 100%"></textarea>
+    </div>
+  </div>
+  <br />
+  <ng-template #footer>
+    <p-button
+      label="Annuler"
+      [text]="true"
+      severity="secondary"
+      (click)="visible = false"
+    />
+    <p-button
+      label="Envoie"
+      [outlined]="true"
+      severity="secondary"
+      (click)="visible = false"
+    />
+  </ng-template>
+</p-dialog>
