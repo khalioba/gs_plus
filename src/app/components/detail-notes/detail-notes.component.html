@@ -1,9 +1,9 @@
 <div class="detail_user">
   <div class="card_user">
-    <h2 class="col_w">Trimestre {{ t }}</h2>
+    <h2 class="col_w">{{ t }}</h2>
     <br />
     <p-table
-      [value]="eleves"
+      [value]="nots"
       [paginator]="true"
       [rows]="10"
       [tableStyle]="{ 'min-width': '50rem' }"
@@ -21,17 +21,22 @@
           <th>Modifie</th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-eleve>
+      <ng-template pTemplate="body" let-item>
         <tr>
-          <td>{{ eleve.subject_name }}</td>
-          <td>{{ eleve.moy_de_c }}</td>
-          <td>{{ eleve.moy_de_com }}</td>
-          <td>{{ eleve.moy }}</td>
-          <td>{{ eleve.coefficient }}</td>
-          <td>{{ eleve.moy_g }}</td>
-          <td>{{ eleve.appreciations }}</td>
+          <td>{{ item.subject_name }}</td>
+          <td>{{ item.homework }}</td>
+          <td>{{ item.workontable }}</td>
+          <td>{{ item.exam }}</td>
+          <td>{{ item.coefficient }}</td>
+          <td>{{ item.moy_g }}</td>
+          <td>{{ item.appreciation }}</td>
           <td>
-            <app-post-note [discipline]="eleve.subject_name" />
+            <app-post-note
+              [discipline]="item.subject_name"
+              [id]="item.id_note"
+              [homework]="item.homework"
+              [workontable]="item.workontable"
+            />
           </td>
         </tr>
       </ng-template>

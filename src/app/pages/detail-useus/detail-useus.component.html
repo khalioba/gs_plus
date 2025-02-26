@@ -1,4 +1,4 @@
-<div>
+<div class="detail_users">
   <div class="detail_user">
     <div class="card_user flexs-s flexs_space gap">
       <div class="detail_user_p1 flexs gap">
@@ -9,10 +9,13 @@
           />
         </div>
         <div class="detail_user_info">
-          <p>Nom & Prenom : adef <strong> oba</strong></p>
-          <p>Age : 12 ans | Classe : 6 eme</p>
+          <p>
+            Nom & Prenom : {{ Students.student.first_name }}
+            <strong> {{ Students.student.last_name }}</strong>
+          </p>
+          <p>Age : 12 ans | Classe : {{ Students.student.class_name }}</p>
           <p>Matricul : kkkkh12</p>
-          <p>Numéro : 069401589</p>
+          <p>Numéro : {{ Students.student.phone }}</p>
         </div>
       </div>
       <div class="detail_user_p2 flexs-s gap">
@@ -22,9 +25,39 @@
       </div>
     </div>
   </div>
-  <app-detail-notes t="1"></app-detail-notes>
-
-  <app-detail-notes t="2"></app-detail-notes>
-
-  <app-detail-notes t="3"></app-detail-notes>
+  <div class="detail_user_note p2">
+    <p-tabs value="0">
+      <p-tablist>
+        <p-tab value="0">Trimestre I</p-tab>
+        <p-tab value="1">Trimestre II</p-tab>
+        <p-tab value="2">Trimestre III</p-tab>
+      </p-tablist>
+      <p-tabpanels>
+        <p-tabpanel value="0">
+          <app-detail-notes
+            *ngIf="Students.notes['Trimestre 1']"
+            [nots]="Students.notes['Trimestre 1']"
+            [t]="'Trimestre 1'"
+          >
+          </app-detail-notes>
+        </p-tabpanel>
+        <p-tabpanel value="1">
+          <app-detail-notes
+            *ngIf="Students.notes['Trimestre 2']"
+            [nots]="Students.notes['Trimestre 2']"
+            [t]="'Trimestre 2'"
+          >
+          </app-detail-notes>
+        </p-tabpanel>
+        <p-tabpanel value="2">
+          <app-detail-notes
+            *ngIf="Students.notes['Trimestre 3']"
+            [nots]="Students.notes['Trimestre 3']"
+            [t]="'Trimestre 3'"
+          >
+          </app-detail-notes>
+        </p-tabpanel>
+      </p-tabpanels>
+    </p-tabs>
+  </div>
 </div>

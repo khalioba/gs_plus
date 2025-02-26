@@ -1,0 +1,113 @@
+<a (click)="showDialog()" class="p-button font-bold" link="true">
+  <div class="stat_card flexs flexs_space gap">
+    <div class="">
+      <h3 class="stat_count"></h3>
+      <p>Ajouter un élève</p>
+    </div>
+    <div class="icon_header_home">
+      <i class="pi pi-users"></i>
+    </div>
+  </div>
+</a>
+
+<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '80%' }">
+  <ng-template #header>
+    <div class="inline-flex items-center justify-center gap-2">
+      <span class="font-bold whitespace-nowrap">Créer un élève</span>
+    </div>
+  </ng-template>
+
+  <form
+    [formGroup]="studentForm"
+    (ngSubmit)="onSubmit()"
+    class="student-form grid2"
+  >
+    <div class="form-group">
+      <label for="first_name">First Name</label>
+      <input id="first_name" formControlName="first_name" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="last_name">Last Name</label>
+      <input id="last_name" formControlName="last_name" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input id="phone" formControlName="phone" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="birth_date">Birth Date</label>
+      <input id="birth_date" formControlName="birth_date" type="date" />
+    </div>
+
+    <div class="form-group">
+      <label for="lieu_naissance">Lieu de naissance</label>
+      <input id="lieu_naissance" formControlName="lieu_naissance" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <p-dropdown
+        [options]="genderOptions"
+        formControlName="genre"
+        optionLabel="label"
+        optionValue="value"
+        placeholder="Select Genre"
+      ></p-dropdown>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" type="email" />
+    </div>
+
+    <div class="form-group">
+      <label for="adresse_actuelle">Adresse Actuelle</label>
+      <input
+        id="adresse_actuelle"
+        formControlName="adresse_actuelle"
+        type="text"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="id_class">ID Class</label>
+      <p-dropdown
+        [options]="classes"
+        formControlName="id_class"
+        optionLabel="class_name"
+        optionValue="id_class"
+        placeholder="Select Class"
+      ></p-dropdown>
+    </div>
+
+    <div class="form-group">
+      <label for="nom_pere">Nom Père</label>
+      <input id="nom_pere" formControlName="nom_pere" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="tel_pere">Tel Père</label>
+      <input id="tel_pere" formControlName="tel_pere" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="nom_mere">Nom Mère</label>
+      <input id="nom_mere" formControlName="nom_mere" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="tel_mere">Tel Mère</label>
+      <input id="tel_mere" formControlName="tel_mere" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="photo">Photo</label>
+      <input id="photo" formControlName="photo" type="file" />
+    </div>
+
+    <button type="submit" [disabled]="studentForm.invalid">Submit</button>
+  </form>
+</p-dialog>

@@ -22,6 +22,8 @@ export class LoginComponent {
           this.router.navigate(['']); // Redirige après connexion
         } else {
           this.errorMessage = 'Identifiants incorrects';
+          console.log(response);
+          
         }
       },
       (error) => {

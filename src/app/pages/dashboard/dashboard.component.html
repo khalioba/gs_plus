@@ -34,36 +34,23 @@
 </div>
 <br />
 <div class="card_table">
-  <div class="table flexs gap flexs_space">
-    <div class="card table_home">
-      <p-table
-        #dt2
-        [value]="eleves"
-        [loading]="loading"
-        [globalFilterFields]="['name', 'first_name', 'birthdate', 'city']"
-      >
-        <ng-template pTemplate="header">
-          <tr>
-            <th pSortableColumn="rang" style="width: 25%">rang</th>
-            <th pSortableColumn="name" style="width: 25%">Nom</th>
-            <th pSortableColumn="Prenom" style="width: 25%">Prenom</th>
-            <th style="width: 25%">classe</th>
-          </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-eleve>
-          <tr>
-            <td>{{ eleve.rang }}</td>
-            <td>{{ eleve.name }}</td>
-            <td>{{ eleve.Prenom }}</td>
-            <td>{{ eleve.class }}</td>
-          </tr>
-        </ng-template>
-        <!-- Pagination (ajouter les éléments ici) -->
-        <ng-template pTemplate="footer"> </ng-template>
-      </p-table>
-    </div>
-    <div class="chart card flex justify-content-center">
-      <p-chart type="doughnut" [data]="data" [options]="options" />
-    </div>
-  </div>
+  <p-tabs value="0">
+    <p-tablist>
+      <p-tab value="0">Admie</p-tab>
+      <p-tab value="1">Echoué</p-tab>
+      <p-tab value="2">tout</p-tab>
+    </p-tablist>
+    <hr />
+    <p-tabpanels>
+      <p-tabpanel value="0">
+        <app-chart-a />
+      </p-tabpanel>
+      <p-tabpanel value="1">
+        <app-chart-e />
+      </p-tabpanel>
+      <p-tabpanel value="2">
+        <app-chart />
+      </p-tabpanel>
+    </p-tabpanels>
+  </p-tabs>
 </div>

@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { ToggleSwitch } from 'primeng/toggleswitch';
 import { ButtonModule } from 'primeng/button';
 import { Menu } from 'primeng/menu';   
-import { MenuItem } from 'primeng/api';
+// import { MenuItem } from 'primeng/api';
 import { PanelMenu } from 'primeng/panelmenu';
 import { TagModule } from 'primeng/tag';
 import { IconFieldModule } from 'primeng/iconfield';
@@ -22,6 +22,8 @@ import { ChartModule } from 'primeng/chart';
 import { Dialog } from 'primeng/dialog';
 import { StepsModule } from 'primeng/steps';
 import { IftaLabelModule } from 'primeng/iftalabel';
+import { TabsModule } from 'primeng/tabs';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,7 +38,6 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { DetailUseusComponent } from './pages/detail-useus/detail-useus.component';
 import { DetailNotesComponent } from './components/detail-notes/detail-notes.component';
 import { PostNoteComponent } from './components/post/post-note/post-note.component';
-import { PostUserComponent } from './components/post/post-user/post-user.component';
 import { PostMessageComponent } from './components/post/post-message/post-message.component';
 import { AdminPComponent } from './pages/admin-p/admin-p.component';
 import { AllNComponent } from './pages/all-n/all-n.component';
@@ -44,6 +45,12 @@ import { AllNTComponent } from './pages/all-n-t/all-n-t.component';
 import { AllTNComponent } from './pages/all-t-n/all-t-n.component';
 import { SelectMComponent } from './components/pop-up/select-m/select-m.component';
 import { PostAdminComponent } from './components/post/post-admin/post-admin.component';
+import { ChartAComponent } from './components/chart-a/chart-a.component';
+import { ChartEComponent } from './components/chart-e/chart-e.component';
+import { ChartComponent } from './components/chart/chart.component';
+import { PostUComponent } from './components/post/post-u/post-u.component';
+import { DropdownModule } from 'primeng/dropdown';
+// import { PostUserComponent } from './components/post/post-user/post-user.component';
 
 @NgModule({
   declarations: [
@@ -58,14 +65,18 @@ import { PostAdminComponent } from './components/post/post-admin/post-admin.comp
     DetailUseusComponent,
     DetailNotesComponent,
     PostNoteComponent,
-    PostUserComponent,
+    // PostUserComponent,
     PostMessageComponent,
     AdminPComponent,
     AllNComponent,
     AllNTComponent,
     AllTNComponent,
     SelectMComponent,
-    PostAdminComponent
+    PostAdminComponent,
+    ChartAComponent,
+    ChartEComponent,
+    ChartComponent,
+    PostUComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +99,12 @@ import { PostAdminComponent } from './components/post/post-admin/post-admin.comp
     ChartModule,
     Dialog,
     StepsModule,
-    IftaLabelModule
+    IftaLabelModule,
+    TabsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    DropdownModule 
+    
   ],
   providers: [
     provideClientHydration(),

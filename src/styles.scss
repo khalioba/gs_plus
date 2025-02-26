@@ -314,9 +314,9 @@ h3 {
   }
 }
 .chart {
-  width: 26%;
-  background: var(--color-2);
+  background: var(--background);
   padding: 20px;
+  width: 100%;
   border-radius: 10px;
 }
 
@@ -400,10 +400,30 @@ h3 {
   font-size: 16px !important;
 }
 
+.detail_users {
+  width: 100%;
+  .p-tabpanels {
+    background: none !important;
+    color: var(--p-tabs-tabpanel-color);
+    padding: var(--p-tabs-tabpanel-padding);
+    outline: 0 none;
+  }
+
+  .p-tablist-tab-list {
+    position: relative;
+    display: flex;
+    background: var(--p-tabs-tablist-background);
+    border-style: solid;
+    border-color: var(--p-tabs-tablist-border-color);
+    border-width: var(--p-tabs-tablist-border-width);
+  }
+}
+
 .detail_user {
   font-size: 15px;
+  // width: 30%;
+
   .card_user {
-    width: 100%;
     min-height: 130px;
     padding: 20px;
     background: linear-gradient(
@@ -414,13 +434,19 @@ h3 {
     border-radius: 10px;
     margin-bottom: 10px;
   }
-  .detail_user_image img {
-    width: 150px;
-    height: 150px;
-    border-radius: 100%;
-    border: 4px solid var(--white);
-    object-fit: cover;
+  .detail_user_image {
+    width: 160px;
+    margin: auto;
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 100%;
+      border: 4px solid var(--white);
+      object-fit: cover;
+      margin: auto;
+    }
   }
+
   .detail_user_info {
     p {
       font-size: 17px;
@@ -429,6 +455,14 @@ h3 {
       margin: 10px 0;
     }
   }
+}
+
+.p2 {
+  // width: 65%;
+}
+
+.p1 {
+  // width: 30%;
 }
 .input_note {
   // width: 100%;
@@ -499,7 +533,7 @@ label {
     height: 85vh;
     background: rgb(255 255 255 / 83%);
     border-radius: 10px;
-    border: 2px solid #28a745;
+    border: 2px solid #d60000;
   }
   .carte_login_img {
     // width: 60%;
@@ -538,4 +572,75 @@ label {
     border: 1px solid var(--color-1) !important;
     color: var(--white) !important;
   }
+}
+
+.p-tab-active {
+  font-size: 20px;
+  background: var(--p-tabs-tab-active-background);
+  border-color: var(--p-tabs-tab-active-border-color);
+  color: var(--p-tabs-tab-active-color);
+}
+.p-tab {
+  font-size: 15px;
+  padding: 5px;
+}
+
+.student-form {
+  // max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  // background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.form-group .p-select {
+  width: 100%;
+  padding: 0px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.form-group input:focus {
+  border-color: #5e9ed6;
+  outline: none;
+}
+
+button[type="submit"] {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: white;
+  background-color: #5e9ed6;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background-color: #4a8bbd;
+}
+
+button[type="submit"]:disabled {
+  background-color: #d0d0d0;
+  cursor: not-allowed;
 }

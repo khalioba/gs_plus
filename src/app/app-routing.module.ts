@@ -23,7 +23,7 @@ const routes: Routes = [
      component: HomeComponent, canActivate: [authGuard] ,
      children: [
        { path: '', component: DashboardComponent, title: 'Home' },
-       { path: 'detail_users', component: DetailUseusComponent, title: 'detail éleve' },
+       { path: 'detail_users/:id', component: DetailUseusComponent, title: 'detail éleve' },
        { path: 'classes', component: ClassesComponent, title: 'classes' },
        { path: 'detailclasses/:id', component: DetailClassesComponent, title: 'detail classes' },
        { path: 'Prof', component: AdminPComponent },
