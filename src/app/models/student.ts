@@ -11,5 +11,8 @@ export interface Student {
 
 export interface StudentResponse {
   status: string;
+  classe: string;
+  year: number;
+  school: number;
   students: Student[];
 }

@@ -18,107 +18,34 @@
     </div>
   </ng-template>
 
-  <p-steps [(activeIndex)]="activeStep" [model]="steps" class="mb-4"></p-steps>
+  <h2>Ajouter un Enseignant</h2>
 
-  <div *ngIf="activeStep === 0" class="">
-    <div class="input_note grid2">
-      <div>
-        <label for="nom" class="font-semibold">Nom</label><br />
-        <input pInputText id="nom" class="w-full" autocomplete="off" />
-      </div>
-      <div>
-        <label for="prenom" class="font-semibold">Prénom</label><br />
-        <input pInputText id="prenom" class="w-full" autocomplete="off" />
-      </div>
+  <form class="grid2" [formGroup]="teacherForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="first_name">Prénom</label>
+      <input
+        id="first_name"
+        formControlName="first_name"
+        type="text"
+        required
+      />
     </div>
 
-    <div class="input_note grid2">
-      <div>
-        <label for="photo" class="photo font-semibold">Photo</label><br />
-        <input type="file" id="photo" class="w-full" />
-      </div>
-      <div>
-        <label for="adresse_actuelle" class="font-semibold"
-          >Adresse actuelle</label
-        ><br />
-        <input
-          pInputText
-          id="adresse_actuelle"
-          class="w-full"
-          autocomplete="off"
-        />
-      </div>
-    </div>
-  </div>
-
-  <div *ngIf="activeStep === 1" class="">
-    <div class="input_note grid2">
-      <div>
-        <label for="date_naissance" class="font-semibold"
-          >Date de naissance</label
-        ><br />
-        <input type="date" id="date_naissance" class="w-full" />
-      </div>
-      <div>
-        <label for="lieu_naissance" class="font-semibold"
-          >Lieu de naissance</label
-        ><br />
-        <input
-          pInputText
-          id="lieu_naissance"
-          class="w-full"
-          autocomplete="off"
-        />
-      </div>
+    <div class="form-group">
+      <label for="last_name">Nom</label>
+      <input id="last_name" formControlName="last_name" type="text" required />
     </div>
 
-    <div class="input_note grid2">
-      <div>
-        <label for="genre" class="font-semibold">Genre</label><br />
-        <select id="genre" class="w-full">
-          <option value="">-- Sélectionnez --</option>
-          <option value="Masculin">Masculin</option>
-          <option value="Féminin">Féminin</option>
-        </select>
-      </div>
-      <div>
-        <label for="telephone" class="font-semibold">N° de téléphone</label
-        ><br />
-        <input pInputText id="telephone" class="w-full" autocomplete="off" />
-      </div>
+    <div class="form-group">
+      <label for="phone">Téléphone</label>
+      <input id="phone" formControlName="phone" type="text" required />
     </div>
 
-    <div class="input_note grid2">
-      <div>
-        <label for="email" class="font-semibold">Adresse e-mail</label><br />
-        <input type="email" id="email" class="w-full" autocomplete="off" />
-      </div>
-      <div>
-        <label for="classe" class="font-semibold">Classe</label><br />
-        <input pInputText id="classe" class="w-full" autocomplete="off" />
-      </div>
-    </div>
-  </div>
+    <div></div>
 
-  <ng-template #footer>
-    <p-button
-      label="Précédent"
-      [disabled]="activeStep === 0"
-      (click)="activeStep = activeStep - 1"
-      severity="secondary"
-    />
-    <p-button
-      label="Suivant"
-      [disabled]="activeStep === 1"
-      (click)="activeStep = activeStep + 1"
-      severity="primary"
-    />
-    <p-button
-      label="Enregistrer"
-      [outlined]="true"
-      severity="success"
-      *ngIf="activeStep === 1"
-      (click)="saveEleve()"
-    />
-  </ng-template>
+    <button type="submit" [disabled]="teacherForm.invalid">Ajouter</button>
+  </form>
+
+  <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
 </p-dialog>

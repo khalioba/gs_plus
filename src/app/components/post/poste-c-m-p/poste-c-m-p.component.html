@@ -1,0 +1,70 @@
+<p-button (click)="showDialog()" severity="info" label="Ajouter une matiere" />
+
+<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '50%' }">
+  <ng-template #header>
+    <div class="inline-flex items-center justify-center gap-2">
+      <span class="font-bold whitespace-nowrap"> Ajouter </span>
+    </div>
+  </ng-template>
+
+  <div class="input_note">
+    <form class="grid2" [formGroup]="classSubjectForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="id_class">Classe</label>
+        <select id="id_class" formControlName="id_class" required>
+          <option
+            *ngFor="let classItem of classes"
+            [value]="classItem.id_class"
+          >
+            {{ classItem.class_name }}
+          </option>
+        </select>
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="id_subject">ID Matière</label>
+        <input
+          id="id_subject"
+          formControlName="id_subject"
+          type="number"
+          required
+        />
+      </div> -->
+
+      <div class="form-group">
+        <label for="id_subject">Matière</label>
+        <select id="id_subject" formControlName="id_subject" required>
+          <option *ngFor="let subjuct of subjucts" [value]="subjuct.id_subject">
+            {{ subjuct.name }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="coefficient">Coefficient</label>
+        <input
+          id="coefficient"
+          formControlName="coefficient"
+          type="number"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="id_teacher">Enseignant</label>
+        <select id="id_teacher" formControlName="id_teacher" required>
+          <option *ngFor="let teacher of teachers" [value]="teacher.teacher_id">
+            {{ teacher.first_name }} {{ teacher.last_name }}
+          </option>
+        </select>
+      </div>
+
+      <button type="submit" [disabled]="classSubjectForm.invalid">
+        Ajouter
+      </button>
+    </form>
+
+    <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </div>
+</p-dialog>

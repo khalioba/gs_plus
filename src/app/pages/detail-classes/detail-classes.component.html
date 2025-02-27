@@ -1,5 +1,9 @@
 <div class="">
-  <h3 class="col_1">{{ students }}</h3>
+  <div class="titre_page flexs flexs_space">
+    <h3 class="col_1">{{ classe }}</h3>
+    <!-- <p-button label="Ajouter une matiere" severity="info"></p-button> -->
+    <app-poste-c-m-p [year]="year" [idSchool]="year" />
+  </div>
   <br />
   <div class="header_home flexs flexs_space flexs_wap gap">
     <a routerLink="/" class="p-button font-bold" link="true">

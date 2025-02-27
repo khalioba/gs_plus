@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ServeDService } from '../../services/serve-d.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Profs } from '../../models/prof.model';
 
 @Component({
   selector: 'app-admin-p',
@@ -8,43 +11,24 @@ import { Component } from '@angular/core';
   styleUrl: './admin-p.component.scss'
 })
 export class AdminPComponent {
-  eleves = [
-    {
-      rang: 1,
-      name: 'James',
-      Prenom: 'davive',
-      class: '6 eme'
-    },
-    {
-      rang: 2,
-      name: 'ades',
-      Prenom: 'vive',
-      class: '3 eme'
-    },
-    {
-      rang: 3,
-      name: 'vanessa',
-      Prenom: 'itive',
-      class: 'cm2'
-    },
-    {
-      rang: 4,
-      name: 'James',
-      Prenom: 'davive',
-      class: '5 eme'
-    },
-    {
-      rang: 6,
-      name: 'James',
-      Prenom: 'davive',
-      class: '5 eme'
-    },
-    {
-      rang: 7,
-      name: 'James',
-      Prenom: 'davive',
-      class: '5 eme'
-    },
-    
-  ];
+
+  prof: Profs[] = [];
+  constructor(private serveAService: ServeDService,
+      private route: ActivatedRoute, 
+      private router: Router ) {}
+
+      
+      ngOnInit(): void {
+  this.serveAService.loadprof().subscribe(response => {
+    if (response.status === 'success') {
+      this.prof = response.data;
+      console.log(this.prof);
+      console.log(response);
+    } else {
+      console.error('Erreur dans la réponse : ', response);
+    }
+  }, error => {
+    console.error('Erreur lors de la récupération des élèves : ', error);
+  });
+}
 }

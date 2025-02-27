@@ -11,7 +11,9 @@ import { combineLatest } from 'rxjs';
     standalone: false
 })
 export class DetailClassesComponent {
-
+  classe!: string;
+  school!: number;
+  year!: number;
 
   students: Student[] = [];
   
@@ -34,13 +36,16 @@ export class DetailClassesComponent {
         this.serveAService.loadStudentsByClass(idSchool, schoolYear, idClass).subscribe(response => {
           if (response.status === 'success') {
             this.students = response.students;
+            this.classe = response.classe
+            this.year = response.year
+            this.school = response.school
             console.log(this.students);
           } else {
             console.error('Erreur dans la réponse : ', response);
           }
         }, error => {
           console.error('Erreur lors de la récupération des élèves : ', error);
-        });
+        }); 
       } else {
         console.error('Ecole ou année scolaire manquante');
       }

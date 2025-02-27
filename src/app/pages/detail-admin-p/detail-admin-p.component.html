@@ -1,0 +1,44 @@
+<div class="detail_users">
+  <div class="detail_user">
+    <div class="card_user flexs-s flexs_space gap">
+      <div class="detail_user_p1 flexs gap">
+        <div class="detail_user_image">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYLZotUNVXg3YmkYJBmBcGixIclY3tJs6BfQ&s"
+            alt="Photo de "
+          />
+        </div>
+        <div class="detail_user_info">
+          <p>
+            Nom & Prenom : {{ prof.data.first_name }}
+            <strong> {{ prof.data.last_name }}</strong>
+          </p>
+          <p>Numéro : {{ prof.data.phone }}</p>
+        </div>
+      </div>
+      <div class="detail_user_p2 flexs-s gap">
+        <app-post-message />
+      </div>
+    </div>
+  </div>
+  <p-table
+    [value]="prof.data.class_subject"
+    [paginator]="true"
+    [rows]="10"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    [rowsPerPageOptions]="[5, 10, 20]"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Classe</th>
+        <th>Matier</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+      <tr>
+        <td>{{ item.class_name }}</td>
+        <td>{{ item.subject_name }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

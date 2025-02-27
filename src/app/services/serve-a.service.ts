@@ -39,6 +39,6 @@ export class ServeAService {
     const url = `${this.apiUrl}get/student_class.php?id_school=${idSchool}&school_year=${id_year}&id_class=${idClass}`;
     return this.http.get<StudentResponse>(url); // Utilisation du modèle StudentResponse
   }
-
+ 
 }
 

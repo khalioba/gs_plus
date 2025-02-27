@@ -50,6 +50,8 @@ import { ChartEComponent } from './components/chart-e/chart-e.component';
 import { ChartComponent } from './components/chart/chart.component';
 import { PostUComponent } from './components/post/post-u/post-u.component';
 import { DropdownModule } from 'primeng/dropdown';
+import { DetailAdminPComponent } from './pages/detail-admin-p/detail-admin-p.component';
+import { PosteCMPComponent } from './components/post/poste-c-m-p/poste-c-m-p.component';
 // import { PostUserComponent } from './components/post/post-user/post-user.component';
 
 @NgModule({
@@ -76,7 +78,9 @@ import { DropdownModule } from 'primeng/dropdown';
     ChartAComponent,
     ChartEComponent,
     ChartComponent,
-    PostUComponent
+    PostUComponent,
+    DetailAdminPComponent,
+    PosteCMPComponent
   ],
   imports: [
     BrowserModule,

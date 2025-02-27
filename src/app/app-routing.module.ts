@@ -11,6 +11,7 @@ import { AllNComponent } from './pages/all-n/all-n.component';
 import { AllTNComponent } from './pages/all-t-n/all-t-n.component';
 import { AllNTComponent } from './pages/all-n-t/all-n-t.component';
 import { authGuard } from './guards/auth.guard';
+import { DetailAdminPComponent } from './pages/detail-admin-p/detail-admin-p.component';
 
 const routes: Routes = [
    // Page de connexion (route par défaut)
@@ -26,6 +27,7 @@ const routes: Routes = [
        { path: 'detail_users/:id', component: DetailUseusComponent, title: 'detail éleve' },
        { path: 'classes', component: ClassesComponent, title: 'classes' },
        { path: 'detailclasses/:id', component: DetailClassesComponent, title: 'detail classes' },
+       { path: 'prof/:id', component: DetailAdminPComponent, title: 'detail prof' },
        { path: 'Prof', component: AdminPComponent },
        { path: 'note', component: AllNComponent },
        { path: 'trimestre', component: AllTNComponent },
