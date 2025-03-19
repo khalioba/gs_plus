@@ -1,109 +1,32 @@
-<a (click)="showDialog()">
+<a (click)="showDialog()" (click)="getSubjects()">
   <div class="cart_class flexs flexs_space">
     <div class="">
-      <h3>Trimestre 1</h3>
-      <p></p>
+      <h3>{{ classe.class_name }}</h3>
+      <p>{{ classe.student_count }} élèves</p>
     </div>
     <div class="cart_color"></div>
   </div>
 </a>
-<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '50%' }">
+<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '70%' }">
   <ng-template #header>
     <div class="inline-flex items-center justify-center gap-2">
       <span class="font-bold whitespace-nowrap"> Selection de la matier </span>
     </div>
   </ng-template>
-  <div class="all_class grid2">
-    <a routerLink="../notes">
-      <div class="cart_class flexs flexs_space">
-        <div class="">
-          <h3>SVT</h3>
-          <p></p>
+  <div class="all_class grid">
+    <div class="" *ngFor="let subject of subjects">
+      <a
+        [routerLink]="['../notes', classId, subject.id_subject]"
+        [queryParams]="{ classId: classId, subjectId: subject.id_subject }"
+      >
+        <div class="cart_class flexs flexs_space">
+          <div class="">
+            <h3>{{ subject.subject_name }}</h3>
+          </div>
+          <div class="cart_color"></div>
         </div>
-        <div class="cart_color"></div>
-      </div>
-    </a>
-    <a routerLink="../notes">
-      <div class="cart_class flexs flexs_space">
-        <div class="">
-          <h3>MATH</h3>
-          <p></p>
-        </div>
-        <div class="cart_color"></div>
-      </div> </a
-    ><a routerLink="../notes">
-      <div class="cart_class flexs flexs_space">
-        <div class="">
-          <h3>P-C</h3>
-          <p></p>
-        </div>
-        <div class="cart_color"></div>
-      </div> </a
-    ><a routerLink="../notes">
-      <div class="cart_class flexs flexs_space">
-        <div class="">
-          <h3>Trimestre 2</h3>
-          <p></p>
-        </div>
-        <div class="cart_color"></div>
-      </div> </a
-    ><a routerLink="../notes">
-      <div class="cart_class flexs flexs_space">
-        <div class="">
-          <h3>Trimestre 2</h3>
-          <p></p>
-        </div>
-        <div class="cart_color"></div>
-      </div> </a
-    ><a routerLink="../notes">
-      <div class="cart_class flexs flexs_space">
-        <div class="">
-          <h3>Trimestre 2</h3>
-          <p></p>
-        </div>
-        <div class="cart_color"></div>
-      </div> </a
-    ><a routerLink="../notes">
-      <div class="cart_class flexs flexs_space">
-        <div class="">
-          <h3>Trimestre 2</h3>
-          <p></p>
-        </div>
-        <div class="cart_color"></div>
-      </div> </a
-    ><a routerLink="../notes">
-      <div class="cart_class flexs flexs_space">
-        <div class="">
-          <h3>Trimestre 2</h3>
-          <p></p>
-        </div>
-        <div class="cart_color"></div>
-      </div> </a
-    ><a routerLink="../notes">
-      <div class="cart_class flexs flexs_space">
-        <div class="">
-          <h3>Trimestre 2</h3>
-          <p></p>
-        </div>
-        <div class="cart_color"></div>
-      </div> </a
-    ><a routerLink="../notes">
-      <div class="cart_class flexs flexs_space">
-        <div class="">
-          <h3>Trimestre 2</h3>
-          <p></p>
-        </div>
-        <div class="cart_color"></div>
-      </div> </a
-    ><a routerLink="../notes">
-      <div class="cart_class flexs flexs_space">
-        <div class="">
-          <h3>Trimestre 2</h3>
-          <p></p>
-        </div>
-        <div class="cart_color"></div>
-      </div>
-    </a>
+      </a>
+    </div>
   </div>
 
   <ng-template #footer>

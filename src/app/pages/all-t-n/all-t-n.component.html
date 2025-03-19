@@ -5,23 +5,8 @@
 <div class="all_class grid">
   <app-select-m />
 
-  <a routerLink="../notes">
-    <div class="cart_class flexs flexs_space">
-      <div class="">
-        <h3>Trimestre 2</h3>
-        <p></p>
-      </div>
-      <div class="cart_color"></div>
-    </div>
-  </a>
-
-  <a routerLink="../notes">
-    <div class="cart_class flexs flexs_space">
-      <div class="">
-        <h3>Trimestre 3</h3>
-        <p></p>
-      </div>
-      <div class="cart_color"></div>
-    </div>
-  </a>
+  <app-classe
+    *ngFor="let classe of classes?.data"
+    [classe]="classe"
+  ></app-classe>
 </div>

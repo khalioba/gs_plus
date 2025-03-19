@@ -1,87 +1,11 @@
 <div class="titre_page">
   <h3>Gestion des Notes</h3>
 </div>
-<div class="titre_page">
-  <h3>primaire</h3>
-</div>
 <div class="all_class grid">
-  <a routerLink="../trimestre">
-    <div class="cart_class flexs flexs_space">
-      <div class="">
-        <h3>6 éme</h3>
-        <p>250 élève</p>
-      </div>
-      <div class="cart_color"></div>
-    </div>
-  </a>
-
-  <a routerLink="../trimestre">
-    <div class="cart_class flexs flexs_space">
-      <div class="">
-        <h3>6 éme</h3>
-        <p>250 élève</p>
-      </div>
-      <div class="cart_color"></div>
-    </div>
-  </a>
-
-  <a routerLink="../trimestre">
-    <div class="cart_class flexs flexs_space">
-      <div class="">
-        <h3>6 éme</h3>
-        <p>250 élève</p>
-      </div>
-      <div class="cart_color"></div>
-    </div>
-  </a>
-
-  <a routerLink="../trimestre">
-    <div class="cart_class flexs flexs_space">
-      <div class="">
-        <h3>6 éme</h3>
-        <p>250 élève</p>
-      </div>
-      <div class="cart_color"></div>
-    </div>
-  </a>
-
-  <a routerLink="../trimestre">
-    <div class="cart_class flexs flexs_space">
-      <div class="">
-        <h3>6 éme</h3>
-        <p>250 élève</p>
-      </div>
-      <div class="cart_color"></div>
-    </div>
-  </a>
-
-  <a routerLink="../trimestre">
-    <div class="cart_class flexs flexs_space">
-      <div class="">
-        <h3>6 éme</h3>
-        <p>250 élève</p>
-      </div>
-      <div class="cart_color"></div>
-    </div>
-  </a>
-
-  <a routerLink="../trimestre">
-    <div class="cart_class flexs flexs_space">
-      <div class="">
-        <h3>6 éme</h3>
-        <p>250 élève</p>
-      </div>
-      <div class="cart_color"></div>
-    </div>
-  </a>
+  <!-- <app-select-m /> -->
+  <app-select-m
+    *ngFor="let classe of classes?.data"
+    [classe]="classe"
+  ></app-select-m>
 </div>
 <br />
-
-<!-- <div class="titre_page">
-  <h3>Colege</h3>
-</div>
-<app-classe />
-<div class="titre_page">
-  <h3>Lycée</h3>
-</div>
-<app-classe /> -->

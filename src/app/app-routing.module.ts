@@ -31,9 +31,9 @@ const routes: Routes = [
        { path: 'Prof', component: AdminPComponent },
        { path: 'note', component: AllNComponent },
        { path: 'trimestre', component: AllTNComponent },
-       { path: 'notes', component: AllNTComponent },
+       { path: 'notes/:classId/:subjectId', component: AllNTComponent },
       //  { path: 'notes', component: AllNTComponent },
-
+ 
      ],
    },
 ];

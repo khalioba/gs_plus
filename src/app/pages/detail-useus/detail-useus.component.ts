@@ -11,7 +11,7 @@ import { StudentResponse } from '../../models/students.model';
 })
 export class DetailUseusComponent {
   Students!: StudentResponse;
-
+ 
     constructor(private serveBService: ServeBService,
       private route: ActivatedRoute, 
       private router: Router ) {}
