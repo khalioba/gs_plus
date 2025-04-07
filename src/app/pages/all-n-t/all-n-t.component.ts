@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ServeEService } from '../../services/serve-e.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-all-n-t',
@@ -13,23 +14,33 @@ export class AllNTComponent {
   subjectId: any;
   classId: any;
   notesubject: any;
+  admin: any;
   
 
   
 
 
-    constructor(private serveEService: ServeEService,
+  constructor(private serveEService: ServeEService,
+      private authService: AuthService,
       private route: ActivatedRoute, 
       private router: Router ) {}
 
   ngOnInit(): void {
+
+    this.admin = this.authService.getUser(); // Récupère l'utilisateur au chargement
 
     this.route.params.subscribe(params => {
       this.classId = params['classId'];
       this.subjectId = params['subjectId'];
     });
 
-    this.serveEService.getStudentSubject().subscribe(response => {
+    // this.serveEService.getStudentSubject().subscribe(response => {
+    //   this.notesubject = response;
+    //   console.log(response);
+      
+    // });
+
+    this.serveEService.getStudentSubjects(this.classId, this.admin.id_school, this.admin.id_year, this.subjectId).subscribe(response => {
       this.notesubject = response;
       console.log(response);
       

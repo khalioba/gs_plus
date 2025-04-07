@@ -21,7 +21,7 @@ export class ServeEService {
     return this.http.get<any>(`${this.apiUrl}/get/student_cl_sub_tri.php?id_school=1&school_year=1&id_class=2&id_subject=2`);
   }
   
-  // getStudentSubject(classId: number, idSchool: number, id_year: number, subjectId: number): Observable<any> {
-  //   return this.http.get<any>(`${this.apiUrl}/get/student_cl_sub_tri.php?id_school=1&school_year=1&id_class=2&id_subject=2${classId}`);
-  // }
+  getStudentSubjects(classId: number, idSchool: number, id_year: number, subjectId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/get/student_cl_sub_tri.php?id_school=${idSchool}&school_year=${id_year}&id_class=${classId}&id_subject=${subjectId}`);
+  }
 }

@@ -12,6 +12,7 @@ export interface Note {
     subject_name: string;
     homework: number;
     workontable: number;
+    moy_de_devoir: number;
     exam: number;
     moy_g: number;
     coefficient: number;

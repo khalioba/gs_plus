@@ -9,7 +9,7 @@
   <div class="input_note grid2">
     <div class="">
       <label for="moyenne_classe" class="font-semibold w-24"
-        >moyenne de classe</label
+        >Moyenne de Classe</label
       ><br /><br />
       <input
         pInputText
@@ -17,12 +17,12 @@
         [(ngModel)]="moyenneClasse"
         class="flex-auto"
         autocomplete="off"
-        value="12"
+        placeholder="Entrez la moyenne de classe"
       />
     </div>
     <div class="">
       <label for="moyenne_composition" class="font-semibold w-24"
-        >moyenne de composition</label
+        >Moyenne de Composition</label
       ><br /><br />
       <input
         pInputText
@@ -30,6 +30,19 @@
         [(ngModel)]="moyenneComposition"
         class="flex-auto"
         autocomplete="off"
+        placeholder="Entrez la moyenne de composition"
+      />
+    </div>
+    <div class="">
+      <label for="moy_de_devoir" class="font-semibold w-24">Devoir</label
+      ><br /><br />
+      <input
+        pInputText
+        id="moy_de_devoir"
+        [(ngModel)]="moy_de_devoir"
+        class="flex-auto"
+        autocomplete="off"
+        placeholder="Entrez la note de devoir"
       />
     </div>
   </div>

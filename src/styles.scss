@@ -457,13 +457,13 @@ h3 {
   }
 }
 
-.p2 {
-  // width: 65%;
-}
+// .p2 {
+//   // width: 65%;
+// }
 
-.p1 {
-  // width: 30%;
-}
+// .p1 {
+//   // width: 30%;
+// }
 .input_note {
   // width: 100%;
   // // background: red;
@@ -643,4 +643,74 @@ button[type="submit"]:hover {
 button[type="submit"]:disabled {
   background-color: #d0d0d0;
   cursor: not-allowed;
+}
+// ------------------------------------------
+.bulletin-container {
+  width: 60%;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid #0073e6;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo {
+    width: 50px;
+  }
+
+  .info-eleve {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+
+  th {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px;
+  }
+
+  td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .mention {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0073e6;
+  }
+
+  .signature {
+    text-align: right;
+    margin-top: 30px;
+    font-style: italic;
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
 }

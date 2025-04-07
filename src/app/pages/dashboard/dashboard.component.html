@@ -37,18 +37,23 @@
   <p-tabs value="0">
     <p-tablist>
       <p-tab value="0">Admie</p-tab>
-      <p-tab value="1">Echoué</p-tab>
-      <p-tab value="2">tout</p-tab>
+      <p-tab value="1">tout</p-tab>
     </p-tablist>
     <hr />
     <p-tabpanels>
       <p-tabpanel value="0">
-        <app-chart-a />
+        <div class="grid2">
+          <div class="">
+            <h3>Admin</h3>
+            <app-chart-a />
+          </div>
+          <div class="">
+            <h3>Echoue</h3>
+            <app-chart-e />
+          </div>
+        </div>
       </p-tabpanel>
       <p-tabpanel value="1">
-        <app-chart-e />
-      </p-tabpanel>
-      <p-tabpanel value="2">
         <app-chart />
       </p-tabpanel>
     </p-tabpanels>

@@ -12,6 +12,7 @@ import { AllTNComponent } from './pages/all-t-n/all-t-n.component';
 import { AllNTComponent } from './pages/all-n-t/all-n-t.component';
 import { authGuard } from './guards/auth.guard';
 import { DetailAdminPComponent } from './pages/detail-admin-p/detail-admin-p.component';
+import { PdfComponent } from './components/pdf/pdf.component';
 
 const routes: Routes = [
    // Page de connexion (route par défaut)
@@ -32,6 +33,7 @@ const routes: Routes = [
        { path: 'note', component: AllNComponent },
        { path: 'trimestre', component: AllTNComponent },
        { path: 'notes/:classId/:subjectId', component: AllNTComponent },
+       { path: 'pdf', component: PdfComponent },
       //  { path: 'notes', component: AllNTComponent },
  
      ],

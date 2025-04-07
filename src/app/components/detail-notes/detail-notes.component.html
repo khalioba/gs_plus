@@ -13,6 +13,7 @@
         <tr>
           <th>Discipline</th>
           <th>Moy de classe</th>
+          <th>Moy de devoir</th>
           <th>Moy de composition</th>
           <th>Moy /20</th>
           <th>Coef</th>
@@ -25,6 +26,7 @@
         <tr>
           <td>{{ item.subject_name }}</td>
           <td>{{ item.homework }}</td>
+          <td>{{ item.devoir }}</td>
           <td>{{ item.workontable }}</td>
           <td>{{ item.exam }}</td>
           <td>{{ item.coefficient }}</td>
@@ -36,6 +38,7 @@
               [id]="item.id_note"
               [homework]="item.homework"
               [workontable]="item.workontable"
+              [moy_de_devoir]="item.moy_de_devoir"
             />
           </td>
         </tr>

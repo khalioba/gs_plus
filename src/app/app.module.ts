@@ -24,6 +24,7 @@ import { StepsModule } from 'primeng/steps';
 import { IftaLabelModule } from 'primeng/iftalabel';
 import { TabsModule } from 'primeng/tabs';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxPrintModule } from 'ngx-print';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -52,6 +53,7 @@ import { PostUComponent } from './components/post/post-u/post-u.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { DetailAdminPComponent } from './pages/detail-admin-p/detail-admin-p.component';
 import { PosteCMPComponent } from './components/post/poste-c-m-p/poste-c-m-p.component';
+import { PdfComponent } from './components/pdf/pdf.component';
 // import { PostUserComponent } from './components/post/post-user/post-user.component';
 
 @NgModule({
@@ -80,7 +82,8 @@ import { PosteCMPComponent } from './components/post/poste-c-m-p/poste-c-m-p.com
     ChartComponent,
     PostUComponent,
     DetailAdminPComponent,
-    PosteCMPComponent
+    PosteCMPComponent,
+    PdfComponent
   ],
   imports: [
     BrowserModule,
@@ -107,7 +110,8 @@ import { PosteCMPComponent } from './components/post/poste-c-m-p/poste-c-m-p.com
     TabsModule,
     FormsModule,
     ReactiveFormsModule,
-    DropdownModule 
+    DropdownModule,
+    NgxPrintModule
     
   ],
   providers: [

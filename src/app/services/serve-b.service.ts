@@ -34,12 +34,13 @@ export class ServeBService {
     return this.http.get<StudentResponse>(`${this.apiUrl}get/student.php?id_student=${id}`);
   }
 
-  updateNote(data: { id_note: number; moy_de_c: string; moy_de_com: string }): Observable<any> {
+  updateNote(data: { id_note: number; moy_de_c: string; moy_de_com: string; moy_de_devoir: string }): Observable<any> {
     const formData: FormData = new FormData();
     formData.append('id_note', data.id_note.toString());
     formData.append('moy_de_c', data.moy_de_c);
     formData.append('moy_de_com', data.moy_de_com);
-  
+    formData.append('moy_de_devoir', data.moy_de_devoir); // Ajout de 'devoir' au FormData
+
     return this.http.post(`${this.apiUrl}update/note.php`, formData);
   }
   

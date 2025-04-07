@@ -8,23 +8,24 @@ import { ActivatedRoute, Router } from '@angular/router';
   standalone: false,
   
   templateUrl: './post-note.component.html',
-  styleUrl: './post-note.component.scss'
+  styleUrls: ['./post-note.component.scss'] // Correction de 'styleUrl' en 'styleUrls'
 })
 export class PostNoteComponent {
-  @Input() discipline!: string;
-  @Input() id!: number;
-  @Input() homework!: number;  // La valeur à utiliser pour pré-remplir
-  @Input() workontable!: number;  // Autre valeur à utiliser
+  @Input() discipline?: string; // Facultatif
+  @Input() id?: number; // Facultatif
+  @Input() homework: number = 0; // Valeur par défaut
+  @Input() workontable: number = 0; // Valeur par défaut
+  @Input() moy_de_devoir: number = 0; // Facultatif avec valeur par défaut
 
-
-
-  
   visible: boolean = false;
-  moyenneClasse!: number ;
-  moyenneComposition!: number ;
-  constructor(private serveBService: ServeBService,
-      private route: ActivatedRoute, 
-      private router: Router ) {}
+  moyenneClasse: number = 0;
+  moyenneComposition: number = 0;
+
+  constructor(
+    private serveBService: ServeBService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   showDialog() {
     this.visible = true;
@@ -33,10 +34,16 @@ export class PostNoteComponent {
   }
 
   saveNote() {
+    if (!this.id) {
+      console.error('ID de la note manquant');
+      return;
+    }
+
     const data = {
       id_note: this.id,
       moy_de_c: this.moyenneClasse.toString(),
       moy_de_com: this.moyenneComposition.toString(),
+      moy_de_devoir: this.moy_de_devoir.toString() // Ajout de 'devoir' dans les données
     };
 
     this.serveBService.updateNote(data).subscribe(
